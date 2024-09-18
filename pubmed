@@ -7,5 +7,5 @@ handle=Entrez.esearch(db="pubmed", term="artificial intelligence",retmax=20)
 record = Entrez.read (handle)
 record["IdList"]
 idlist=record["IdList"]
-handle=Entrez.efetch(db="pubmed", id=idlist[i:j], rettype="medline", retmode="text")
+handle=Entrez.efetch(db="pubmed", id=idlist, rettype="medline", retmode="text")
 

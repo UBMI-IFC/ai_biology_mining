@@ -4,11 +4,42 @@ from Bio import Entrez
 import pandas as pd
 
 Entrez.email="nruiz@ifc.unam.mx"
-handle=Entrez.esearch(db="pubmed", term="artificial intelligence",retmax=20)
+
+tms=({ "Neuroscience": ["Artificial Intelligence", "Machine learning", "Deep learning"],
+  	"Biomedicine":["Artificial Intelligence", "Machine learning", "Deep learning"],
+  	"Biochemistry":["Artificial Intelligence", "Machine learning", "Deep learning"],
+  	"Ecology":["Artificial Intelligence", "Machine learning", "Deep learning"]
+  	"Cytology":["Artificial Intelligence", "Machine learning", "Deep learning"]
+  	"Biotechnology":["Artificial Intelligence", "Machine learning", "Deep learning"]
+  	"Histology":["Artificial Intelligence", "Machine learning", "Deep learning"]
+  	"Genetics":["Artificial Intelligence", "Machine learning", "Deep learning"]})
+
+date_range=("2000:2024[pubdate]")
+papers=[]
+
+#PMIDS
+handle=Entrez.esearch(db="pubmed", term="tms",retmax=20)
 record = Entrez.read (handle)
 record["IdList"]
-idlist=record["IdList"]
+PMID=record["IdList"]
 
 handle=Entrez.efetch(db="pubmed", id=idlist, rettype="abstract", retmode="text") 
 print(handle.read())
-df= pd.DataFrame({"PMID","Biology Field","Subset", "Title","Abstract", "Keywords", "Time Period", "URL"})
+
+for record in records["PubmedArticle"]:
+	title = print(record["MedlineCitation"]["Article"]["ArticleTitle"])
+	url=f"https://pubmed.ncbi.nlm.nih.gov/"
+	papers.append=({"PMID": [PMID], "Title": [TI]})
+
+#Base de datos        	 
+new_ncb = pd.DataFrame({
+	"PMID": [pmid],
+	"Title": [ti],
+	"Abstract": [ab],
+	"Authors":[au]
+	"Search_term":[tiab]
+	"Keywords": [kwd],
+	"Publication_date":[pubdate] o [pdat],
+	"URL": [url]})
+
+#Excel

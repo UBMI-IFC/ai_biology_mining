@@ -1,5 +1,5 @@
 # Crecimiento de la Inteligencia Artificial en biología
-*Example*
+**Example**
 
 ```js
 def details_rec(pmid):

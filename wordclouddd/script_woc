@@ -1,0 +1,24 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+
+df = pd.read_csv("Base de datos - BD2.csv")
+
+comment_words =""
+stopwords = set(STOPWORDS)
+
+values = df["Title"].values
+
+for val in values:
+	val=str(val)
+	tokens=val.split()
+	for i in range (len (tokens)):
+    	tokens[i]=tokens[i].lower()
+    	comment_words += "".join(tokens)+""
+
+facecolor="black"
+wc=WordCloud(width=800, height=800, background_color=facecolor, stopwords=stopwords,min_font_size=10).generate(comment_words)
+
+plt.figure(figsize=(10,6), facecolor=facecolor)
+plt.axis("off")
+plt.imshow(wc)
+plt.tight_layout(pad=2)

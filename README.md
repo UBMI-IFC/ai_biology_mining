@@ -1,4 +1,4 @@
-# Growth of Artificial Inteligence in biology :EMOJICODE🔬
+# Growth of Artificial Inteligence in biology 🔬
 
 **Example**
 

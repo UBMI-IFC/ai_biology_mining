@@ -4,11 +4,34 @@ from Bio import Entrez
 import pandas as pd
 
 Entrez.email="nruiz@ifc.unam.mx"
-handle=Entrez.esearch(db="pubmed", term="artificial intelligence",retmax=20)
-record = Entrez.read (handle)
-record["IdList"]
-idlist=record["IdList"]
 
-handle=Entrez.efetch(db="pubmed", id=idlist, rettype="abstract", retmode="text") 
-print(handle.read())
-df= pd.DataFrame({"PMID","Biology Field","Subset", "Title","Abstract", "Keywords", "Time Period", "URL"})
+aipai = ["Artificial Intelligence", "Machine learning", "Deep learning"]
+biofield =["Neuroscience", "Biomedicine","Biochemistry"]
+tms = ({f:aipai for f in biofield})
+
+def pubmed_data(terms, start_year="2000", end_year="2025", max_res=5):
+    sugg = f"{terms}[Title/Abstract] AND ({start_year}:{end_year}[dp])"
+    handle = Entrez.esearch(db="pubmed", term=sugg, retmax=max_res, retmode="xml")
+    results = Entrez.read(handle)
+    return results.get("IdList", [])
+
+def details_rec(pmid):
+    handle = Entrez.efetch(db="pubmed", id=pmid, retmode="xml")
+    docs = Entrez.read(handle)["PubmedArticle"]
+
+    deeetails=[]
+   
+    for doc in docs:
+        data={}
+
+        file=doc["MedlineCitation"]["Article"]
+        data["title"] = file.get("ArticleTitle","No title found")
+       
+        pubdate=file["Journal"]["JournalIssue"].get("PubDate",{})
+        year=pubdate.get("Year","Year not found")
+        data["year"]=year
+
+        abstract=file.get("Abstract",{}).get("AbstractText")
+       
+    deeetails.append(data)
+

@@ -1,1 +1,29 @@
+#Nube de palabras desde una base de datos de kaggle
+
+```js
+from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+#index_col=0, indica qué columna del csv se utilizará como índice de todos los datos
+data = pd.read_csv("/content/archive(2).zip", index_col=0)
+print(data.head())
+
+```js
+#Forma de círculo pero no estaría mal hacer otra figura
+x, y = np.ogrid[:300, :300]
+mask = (x - 150) ** 2 + (y - 150) ** 2 > 130 ** 2
+mask = 255 * mask.astype(int)
+
+#Agrega una categoría a la nube de datos
+#.str.lower(), agrega un valor de string para crear series más limpias
+text = "".join(data["Category"].str.lower())
+STOPWORDS=set(STOPWORDS)
+wordcloud = WordCloud(max_words=50, mask=mask, width=1600, height=800, stopwords=STOPWORDS, background_color="black").generate(text)
+plt.figure()
+plt.imshow (wordcloud.recolor(colormap="autumn", random_state=17), interpolation="bilinear")
+plt.axis("off")
+plt.show()
+
 

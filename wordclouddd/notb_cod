@@ -13,7 +13,7 @@ x, y = np.ogrid[:300, :300]
 mask = (x - 150) ** 2 + (y - 150) ** 2 > 130 ** 2
 mask = 255 * mask.astype(int)
 
-text = "".join(data["Category"].str.lower())
+text = "".join(data["search_column"].str.lower())
 STOPWORDS=set(STOPWORDS)
 wordcloud = WordCloud(max_words=50, mask=mask, width=1600, height=800, stopwords=STOPWORDS, background_color="black").generate(text)
 plt.figure()

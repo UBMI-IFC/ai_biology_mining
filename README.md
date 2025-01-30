@@ -11,7 +11,7 @@ import pandas as pd
 import numpy as np
 ```
 
-"Charge" data, 'index_col=0', determine whitch csv column will be used... it's cleaner than do it without, trust the process
+"Charge" data, 'index_col=0', determine whitch csv column will be used... it's cleaner than do without it, trust the process
 
 ```
 data = pd.read_csv("theterrible/database/isgoingtobe/here", index_col=0)

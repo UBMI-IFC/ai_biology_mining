@@ -1,4 +1,4 @@
-# Growth of Artificial Inteligence in biology 🔬
+# Growth of Artificial Inteligence in biology through text mining 🔬
 
 ## **Wordcloud**
 
@@ -11,16 +11,16 @@ import pandas as pd
 import numpy as np
 ```
 
-"Charge" data, `index_col=0`, determine which csv column will be used... it's cleaner than do without it, trust the process
+"Charge" data, `index_col=0`, determines which csv column will be used... it's cleaner than do without it, trust the process
 
 ```
 data = pd.read_csv("theterrible/database/isgoingtobe/here", index_col=0)
 print(data.head())
 ```
 
-We like circle forms, but it can be change to whatever we want. This time for educational purposes is just a circle, a deform one
+We like circle forms, but it can be change to whatever we want. This time for educational purposes is just a circle, a deformed one
 
 ![wceje](https://github.com/user-attachments/assets/df19b753-d636-47cb-93b4-f6ebb7a2895b)
 
-Tadaa, we listen/read but don't judge... only constructive comments, and if not... i'll find you bastard trolls 
+Tadaa, we listen/read but don't judge... only constructive comments, and if not... i'll find you damn trolls.
 

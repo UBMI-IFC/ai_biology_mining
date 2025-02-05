@@ -1,6 +1,58 @@
-*Example*
+from Bio import Entrez
+import pandas as pd
 
-```js
+
+Entrez.email = "youremail@example.com"
+
+ai_term = ["Artificial Intelligence", "Machine learning", "Deep learning"]
+bio_term =["Neuroscience", "Biomedicine","Biochemistry"]
+
+dict_terms={}
+
+for i in bio_term:
+  tms[i]=ai_term
+
+print(dict_terms)
+
+def pubmed_data(terms, start_year="2000", end_year="2025", max_res=3):
+    sugg = f"{terms}[Title/Abstract] AND ({start_year}:{end_year}[dp])"
+    handle = Entrez.esearch(db="pubmed", term=sugg, retmax=max_res)
+    results = Entrez.read(handle)
+    return results.get("IdList",[])
+
 def details_rec(pmid):
-    handle = Entrez.efetch(db="pubmed", id=pmid, retmode="xml")
-    docs = Entrez.read(handle)["PubmedArticle"]```
+  handle = Entrez.efetch(db="pubmed", id=pmid, rettype="xml")
+  docs= Entrez.read(handle)["PubmedArticle"]
+
+  papers_details=[]
+
+  for doc in docs:
+    data={}
+
+    file=doc["MedlineCitation"]["Article"]
+    data["title"]=file.get("ArticleTitle", "No title found") 
+
+    data["abstract"]=file.get("Abstract",{}).get("AbstractText",["No abstract"])[0]
+
+    journal=file["Journal"]
+    data["year"]= journal.get("JournalIssue", {}).get("PubDate", {}).get("Year", "No year found")
+
+    papers_details.append(data)
+
+  return papers_details
+
+for field in bio_term:
+  for term in ai_term:
+    info= term + " AND " + field
+    print("Search terms:", info)
+    id_list=pubmed_data(info)
+
+    if id_list:
+      print("PMID list:", id_list)
+      papers_details= details_rec(id_list)
+
+      for data in papers_details:
+        print("Title:",data["title"])
+        print("Abstract:", data["abstract"])
+        print("Publication year:",data["year"])
+        print("----")

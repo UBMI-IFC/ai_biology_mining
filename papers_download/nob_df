@@ -15,44 +15,48 @@ for i in bio_term:
 print(dict_terms)
 
 def pubmed_data(terms, start_year="2000", end_year="2025", max_res=3):
-    sugg = f"{terms}[Title/Abstract] AND ({start_year}:{end_year}[dp])"
+    sugg = f"{terms}[Title/Abstract] AND ({start_year}:{end_year}[crdt])"
     handle = Entrez.esearch(db="pubmed", term=sugg, retmax=max_res)
     results = Entrez.read(handle)
     return results.get("IdList",[])
 
-def details_rec(pmid):
-  handle = Entrez.efetch(db="pubmed", id=pmid, rettype="xml")
-  docs= Entrez.read(handle)["PubmedArticle"]
+def details_rec(pmid): 
+  paper_details=[]
+  handle = Entrez.efetch(db="pubmed", id=pmid, retmode="xml")
+  docs= Entrez.read(handle)
 
-  papers_details=[]
+  #print(json.dumps(docs, indent=4, default=str))
 
-  for doc in docs:
-    data={}
+  for doc in docs['PubmedArticle]:
+      paper = doc['MedlineCitation']['Article']
+  
+      title = paper['ArticleTitle']
+      abstract = ' '.join(paper['Abstract']['AbstractText']) if 'Abstract' in paper and 'AbstractText' in paper['Abstract'] else 'Abstract not avaible'
+      year = paper['Journal']['JournalIssue']['PubDate'].get('Year', 'No year found')
+      keywords = ','.join(k['DescriptorName'] for k in doc['MedlineCitation'].get('MeshHeadingList', [])) or 'Keywords Not Avaible'
+      url = f"https://www.ncbi.nlm.nih.gov/pubmed/{pmid}"
 
-    file=doc["MedlineCitation"]["Article"]
-    data["title"]=file.get("ArticleTitle", "No title found") 
+      deeetails.append({
+          "title": title,
+          "abstract": abstract,
+          "year": year,
+          "keywords": keywords,
+          "search_tms": search_tms,
+          "url": url})
 
-    data["abstract"]=file.get("Abstract",{}).get("AbstractText",["No abstract"])[0]
+      pubmed_base=pd.DataFrame({
+          'PMID':[pmid],
+          'Title':[title],
+          'Abstract':[abstract],
+          'Year':[year],
+          'Keywords': [keywords],
+          'Search_terms': [search_tms],
+          'URL': [url]})
 
-    journal=file["Journal"]
-    data["year"]= journal.get("JournalIssue", {}).get("PubDate", {}).get("Year", "No year found")
+      df=pd.concat([df,pubmed_base], ignore_index=True)
 
-    papers_details.append(data)
+  time.sleep(1)
+  handle.close()
 
-  return papers_details
-
-for field in bio_term:
-  for term in ai_term:
-    info= term + " AND " + field
-    print("Search terms:", info)
-    id_list=pubmed_data(info)
-
-    if id_list:
-      print("PMID list:", id_list)
-      papers_details= details_rec(id_list)
-
-      for data in papers_details:
-        print("Title:",data["title"])
-        print("Abstract:", data["abstract"])
-        print("Publication year:",data["year"])
-        print("----")
+ print(df)
+ return deeetails

@@ -17,13 +17,16 @@ for i in bio_term:
 print(dict_terms)
 
 def pubmed_data(terms, start_year="2000", end_year="2025", max_res=3):
-    sugg = f"{terms}[Title/Abstract] AND ({start_year}:{end_year}[crdt])"
+    sugg = f"{terms}[Title/Abstract] AND ({start_year}:{end_year}[dp])"
     handle = Entrez.esearch(db="pubmed", term=sugg, retmax=max_res)
     results = Entrez.read(handle)
     return results.get("IdList",[])
 
-def details_rec(pmid): 
+def details_rec(id_list, search_term): 
   paper_details=[]
+  df = pd.DataFrame(columns=['PMID', 'Title', 'Abstract', 'Year', 'MeSH_Keywords', 'Manual_Keywords', 'URL', 'Search_Term'])
+
+  for pmid in id_list:
   handle = Entrez.efetch(db="pubmed", id=pmid, retmode="xml")
   docs= Entrez.read(handle)
 
@@ -35,30 +38,42 @@ def details_rec(pmid):
       title = paper['ArticleTitle']
       abstract = ' '.join(paper['Abstract']['AbstractText']) if 'Abstract' in paper and 'AbstractText' in paper['Abstract'] else 'Abstract not avaible'
       year = paper['Journal']['JournalIssue']['PubDate'].get('Year', 'No year found')
-      keywords = ','.join(k['DescriptorName'] for k in doc['MedlineCitation'].get('MeshHeadingList', [])) or 'Keywords Not Avaible'
+      keywords = ','.join(keyword['DescriptorName'] for keyword in doc['MedlineCitation'].get('MeshHeadingList', [])) or 'Keywords Not Avaible'
+
+      KWD_list_compl = ["neural network", "algorithm", "deep learning", "artificial intelligence", "machine learning", "reinforcement learning", "biology"]
+            KWD_list = []
+
+            for keyss in KWD_list_compl:
+              if keyss.lower() in title.lower() or keyss.lower() in abstract.lower():
+                KWD_list.append(keyss)
+
+            KWD_list_str = ','.join(KWD_list)
+
       url = f"https://www.ncbi.nlm.nih.gov/pubmed/{pmid}"
 
-      deeetails.append({
-          "title": title,
-          "abstract": abstract,
-          "year": year,
-          "keywords": keywords,
-          "search_tms": search_tms,
-          "url": url})
+      pubmed_df=pd.DataFrame({
+                'PMID':[pmid],
+                'Title':[title],
+                'Abstract':[abstract],
+                'Year':[year],
+                'MeSH_Keywords': [keywords],
+                'Manual_Keywords': [KWD_list_str],
+                'URL': [url],
+                'Search_Term': [search_term]})
 
-      pubmed_base=pd.DataFrame({
-          'PMID':[pmid],
-          'Title':[title],
-          'Abstract':[abstract],
-          'Year':[year],
-          'Keywords': [keywords],
-          'Search_terms': [search_tms],
-          'URL': [url]})
+            df = pd.concat([df,pubmed_df], ignore_index=True)
 
-      df=pd.concat([df,pubmed_base], ignore_index=True)
+        time.sleep(1)
+        handle.close()
 
-  time.sleep(1)
-  handle.close()
+    return df
 
- print(df)
- return deeetails
+all_results_df = []
+for search_term in tms.keys():
+    id_list = pubmed_data(search_term, max_res=3)
+    df_result = details_rec(id_list, search_term)
+    all_results_df.append(df_result)
+
+all_results_df = pd.concat(all_results_df, ignore_index=True)
+
+print(all_results_df)

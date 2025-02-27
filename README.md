@@ -2,16 +2,16 @@
 ## **Introduction**
  *smart words*
  
-**Text mining phases [¹]**
+**Text mining phases**[¹]
 1. Study purpose
    _Identificate and label biological search terms
 2.Information recovery
-   -Recolect, identify,pick and validate information
+   _Recolect, identify,pick and validate information
 3. Text processing
-   -Lexicon analysis
+   _Lexicon analysis
 5. Data analysis and extraction
 6. Data display?
-   -Storage information
+   _Storage information
 
  
 ## **Wordcloud**

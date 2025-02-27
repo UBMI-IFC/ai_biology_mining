@@ -1,5 +1,19 @@
 # Growth of Artificial Inteligence in biology through text mining 🔬
+## **Introduction**
+ *smart words*
+ 
+**Text mining phases [¹]**
+1. Study purpose
+   _Identificate and label biological search terms
+2.Information recovery
+   -Recolect, identify,pick and validate information
+3. Text processing
+   -Lexicon analysis
+5. Data analysis and extraction
+6. Data display?
+   -Storage information
 
+ 
 ## **Wordcloud**
 
 <ins>Used libraries:</ins>
@@ -22,5 +36,5 @@ We like circle forms, but it can be change to whatever we want. This time for ed
 
 ![wceje](https://github.com/user-attachments/assets/df19b753-d636-47cb-93b4-f6ebb7a2895b)
 
-Tadaa, we listen/read but don't judge... only constructive comments, and if not... i'll find you damn trolls.
 
+[¹]: Contreras, M. (2014). Minería de texto: una visión actual. *Biblioteca Universitaria*. 17(2), pp. 129-138.

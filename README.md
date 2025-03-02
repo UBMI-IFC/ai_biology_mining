@@ -2,16 +2,16 @@
 ## **Introduction**
  *smart words*
  
-**Text mining phases**[¹]
+**Text mining phases**[^1]
 1. Study purpose
-   _Identificate and label biological search terms
-2.Information recovery
-   _Recolect, identify,pick and validate information
+   - Identificate and label biological search terms
+2. Information recovery
+   - Recolect, identify,pick and validate information
 3. Text processing
-   _Lexicon analysis
+   - Lexicon analysis
 5. Data analysis and extraction
 6. Data display?
-   _Storage information
+   - Storage information
 
  
 ## **Wordcloud**
@@ -37,4 +37,4 @@ We like circle forms, but it can be change to whatever we want. This time for ed
 ![wceje](https://github.com/user-attachments/assets/df19b753-d636-47cb-93b4-f6ebb7a2895b)
 
 
-[¹]: Contreras, M. (2014). Minería de texto: una visión actual. *Biblioteca Universitaria*. 17(2), pp. 129-138.
+[^1]: Contreras, M. (2014). Minería de texto: una visión actual. *Biblioteca Universitaria*. 17(2), pp. 129-138.

@@ -1,24 +1,15 @@
-#Wordcloud
+keywords_text = []
+text="".join(all_results_df["Manual_Keywords"].str.lower())
+keywords_text.append(text)
+text="".join(all_results_df["MeSH_Keywords"].str.lower())
+keywords_text.append(text)
 
-from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
-import matplotlib.pyplot as plt
-import pandas as pd
-import numpy as np
+stopwords=(["dental","personnelkeyword","foundkeyword", "mandible", "wake","postmenopausal","intelligencekeyword","questionnaires","proliferationkeyword", "middle", "young", "practice","century", "adult","foundhumans","found","sleep", "attitude", "pulp", "collagen","bone", "mice", "21 st", "20 th","nigeria","20th", "not", "21st", "available", "keywords", "found","no", "not", "keyword"]) + list(STOPWORDS)
 
-data = pd.read_csv("Data", index_col=0)
-print(data.head())
-
-#Circle
-x, y = np.ogrid[:300, :300]
-mask = (x - 150) ** 2 + (y - 150) ** 2 > 130 ** 2
-mask = 255 * mask.astype(int)
-
-text = "".join(data["search_column"].str.lower())
-STOPWORDS=set(STOPWORDS)
-wordcloud = WordCloud(max_words=50, mask=mask, width=1600, height=800, stopwords=STOPWORDS, background_color="black").generate(text)
-plt.figure()
-plt.imshow (wordcloud.recolor(colormap="autumn", random_state=17), interpolation="bilinear")
+wordcloud = WordCloud(max_words=100, stopwords=stopwords, width=1600, height=800, background_color="black", contour_width=.03, contour_color='grey', max_font_size=80).generate(text)
+plt.figure(figsize=(10, 10))
+plt.imshow(wordcloud.recolor(colormap="autumn", random_state=17), interpolation="bilinear")
 plt.axis("off")
+plt.title("Artificial intelligence and biology", fontsize=20)
+plt.tight_layout(pad=0)
 plt.show()
-
-

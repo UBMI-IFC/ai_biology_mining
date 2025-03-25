@@ -12,6 +12,11 @@
 5. Data analysis and extraction
 6. Data display?
    - Storage information
+   - Plotting
+   - Wordcloud
+
+## **Barplot**
+(![barai](https://github.com/user-attachments/assets/e754cbb7-cd6c-42c9-b539-6d6e8211a504)
 
  
 ## **Wordcloud**

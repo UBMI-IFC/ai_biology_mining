@@ -9,14 +9,23 @@
    - Recolect, identify,pick and validate information
 3. Text processing
    - Lexicon analysis
-5. Data analysis and extraction
-6. Data display
+4. Data analysis and extraction
+5. Data display
    - Storage information
    - Plotting
      - Subplot
      - Barplot
    - Wordcloud
 
+#1. Study purpose 
+
+#2. Information recovery
+
+#3. Text processing 
+
+#4. Data analysis
+
+#5. Data display
 
 ## **Subplot**
 <ins>Used libraries:</ins>

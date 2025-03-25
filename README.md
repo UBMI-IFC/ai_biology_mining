@@ -17,15 +17,15 @@
      - Barplot
    - Wordcloud
 
-#1. Study purpose 
+# 1. Study purpose 
 
-#2. Information recovery
+# 2. Information recovery
 
-#3. Text processing 
+# 3. Text processing 
 
-#4. Data analysis
+# 4. Data analysis
 
-#5. Data display
+# 5. Data display
 
 ## **Subplot**
 <ins>Used libraries:</ins>

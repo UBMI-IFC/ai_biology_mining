@@ -74,11 +74,23 @@ def details_rec(id_list, ai_term, bio_term):
 return df
 
 all_results_df = []
-for search_term in tms.keys():
-    id_list = pubmed_data(search_term, max_res=3)
-    df_result = details_rec(id_list, search_term)
+for bioterm, termlist in tms.items():
+  for ai_term in termlist:
+    id_list = pubmed_data([bioterm, ai_term], start_year="2020", end_year="2024")
+    time.sleep(3)
+    df_result = details_rec(id_list, [ai_term], bioterm)
     all_results_df.append(df_result)
 
-all_results_df = pd.concat(all_results_df, ignore_index=True)
+if all_results_df:
+    all_results_df = pd.concat(all_results_df, ignore_index=True)
+    all_results_df = all_results_df.drop_duplicates(subset=['PMID'])
 
-print(all_results_df)
+#Extra
+    pmidcount=0
+    for pmid in all_results_df['PMID']:
+      wordsk = pmid.split(', ')
+      countk = len(wordsk)
+      pmidcount += (countk)
+
+print(f"\nPMID found: {pmidcount}")
+

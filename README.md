@@ -2,7 +2,7 @@
 ## **Introduction**
  *smart words*
  
-**Text mining phases**[^1] [^2]
+**Text mining phases**[^1][^2]
 1. Study purpose
    - Identificate and label biological search terms
 2. Information recovery

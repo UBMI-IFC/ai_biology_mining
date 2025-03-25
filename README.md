@@ -1,6 +1,7 @@
 # Growth of Artificial Intelligence in biological sciences: Pubmed automation 🔬
 ## **Introduction**
- *smart words*
+ *smart words-primero en español, ai dont spik a inglich*
+ El uso de nuevos métodos para 
  
 **Text mining phases**[^1][^2]
 1. Study purpose
@@ -17,15 +18,15 @@
      - Barplot
    - Wordcloud
 
-# 1. Study purpose 
+# Study purpose 
 
-# 2. Information recovery
+# Information recovery
 
-# 3. Text processing 
+# Text processing 
 
-# 4. Data analysis
+# Data analysis
 
-# 5. Data display
+# Data display
 
 ## **Subplot**
 <ins>Used libraries:</ins>

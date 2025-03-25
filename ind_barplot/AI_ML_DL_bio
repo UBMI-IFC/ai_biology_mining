@@ -1,0 +1,17 @@
+for ai_term in aipai:
+      ai_data = all_results_df[all_results_df['Term_List'].str.contains(ai_term, case=False)]
+      bio_counts = ai_data.groupby('Bio_Term')['Count'].sum().reset_index()
+
+      plt.figure(figsize=(10, 6))
+      sns.set_theme(style="darkgrid")
+      ax=sns.barplot(x='Bio_Term', y='Count', data=bio_counts, palette='mako')
+
+      plt.title(f'Publications on {ai_term} in the biological sciences (2020-2025)', fontsize=16)
+      plt.xlabel('Biological Field', fontsize=12)
+      plt.ylabel('Count', fontsize=12)
+
+      for i, v in enumerate(bio_counts['Count']):
+        ax.text(i, v, str(v), ha='center', va='bottom', fontsize=8)
+
+      plt.tight_layout()
+      plt.show()

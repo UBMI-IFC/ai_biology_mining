@@ -31,10 +31,9 @@ import numpy as np
 data = pd.read_csv("theterrible/database/isgoingtobe/here", index_col=0)
 print(data.head())
 ```
+Wordcloud
 
-We like circle forms, but it can be change to whatever we want. This time for educational purposes is just a circle, a deformed one
-
-![wceje](https://github.com/user-attachments/assets/df19b753-d636-47cb-93b4-f6ebb7a2895b)
+![Most common keywords in Artificial Intelligence applied to biological sciences](![wccc](https://github.com/user-attachments/assets/dde6f712-3586-4ad8-9b20-338cdedbb3b8)
 
 
 [^1]: Contreras, M. (2014). Minería de texto: una visión actual. *Biblioteca Universitaria*. 17(2), pp. 129-138.

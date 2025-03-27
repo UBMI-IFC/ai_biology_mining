@@ -21,15 +21,15 @@
 
 # Study purpose 
 ...
-Use of Biopython 'Bio.Entrez' to join NCBI database and get PubMed data 
+Use of Biopython `Bio.Entrez` to join NCBI database and get PubMed data 
 
 ¡Remember to write your email!
 ```
-Entrez.email = "youremail@motherhelp.com"
+Entrez.email = "youremail@2hoursofsleepcaffeineandinsanity.com"
 ```
 
 Define the term list
-'Agregar el script de lo de las carpetas'
+`Agregar el script de lo de las carpetas`
 
 Create a dictionary, iterating your term lists
 ```

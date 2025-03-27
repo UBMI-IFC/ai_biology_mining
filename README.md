@@ -1,6 +1,6 @@
 # Growth of Artificial Intelligence in biological sciences: Pubmed automation 🔬
 ## **Introduction**
- *smart words-primero en español, ai dont spik a inglich*
+ *smart words*
  El uso de nuevos métodos para 
  
 **Text mining phases**[^1][^2]
@@ -35,6 +35,7 @@ Create a dictionary, iterating your term lists
 ```
 {'Biology': ['Artificial Intelligence', 'Machine learning', 'Deep learning'], 'Neurobiology': ['Artificial Intelligence', 'Machine learning', 'Deep learning'], 'Bioinformatics': ['Artificial Intelligence', 'Machine learning', 'Deep learning'], 'Genetics': ['Artificial Intelligence', 'Machine learning', 'Deep learning'], 'Ecology': ['Artificial Intelligence', 'Machine learning', 'Deep learning']}
 ```
+
 
 # Information retrival
 

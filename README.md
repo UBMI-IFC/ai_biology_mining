@@ -6,27 +6,43 @@
 **Text mining phases**[^1][^2]
 1. Study purpose
    - Identificate and label biological search terms
-2. Information recovery
-   - Recolect, identify,pick and validate information
+2. Information retrival
+   - Recolect, identify, pick and validate information
 3. Text processing
-   - Lexicon analysis
+   - Exploring large amounts of data or text
+     - -Filters and cleaning duplicates
 4. Data analysis and extraction
-5. Data display
+5. Outcome results
    - Storage information
-   - Plotting
+   - Data display
      - Subplot
      - Barplot
-   - Wordcloud
+     - Wordcloud
 
 # Study purpose 
+...
+Use of Biopython 'Bio.Entrez' to join NCBI database and get PubMed data 
 
-# Information recovery
+¡Remember to write your email!
+```
+Entrez.email = "youremail@motherhelp.com"
+```
+
+Define the term list
+'Agregar el script de lo de las carpetas'
+
+Create a dictionary, iterating your term lists
+```
+{'Biology': ['Artificial Intelligence', 'Machine learning', 'Deep learning'], 'Neurobiology': ['Artificial Intelligence', 'Machine learning', 'Deep learning'], 'Bioinformatics': ['Artificial Intelligence', 'Machine learning', 'Deep learning'], 'Genetics': ['Artificial Intelligence', 'Machine learning', 'Deep learning'], 'Ecology': ['Artificial Intelligence', 'Machine learning', 'Deep learning']}
+```
+
+# Information retrival
 
 # Text processing 
 
-# Data analysis
+# Data analysis and extraction
 
-# Data display
+# Outcome results
 
 ## **Subplot**
 <ins>Used libraries:</ins>
@@ -77,4 +93,4 @@ Wordcloud
 
 [^1]: Contreras, M. (2014). Minería de texto: una visión actual. *Biblioteca Universitaria*. 17(2), pp. 129-138.
 
-[^2]: Contreras, M. (2014). Minería de texto: una visión actual. *Biblioteca Universitaria*. 17(2), pp. 129-138.
+[^2]: Sarkar, D. (2016). Text Analytics with Python: A practical real-world approach to gaining actionable insights from your data. https://doi.org/10.1007/978-1-4842-2388-8

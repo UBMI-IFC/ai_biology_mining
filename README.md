@@ -6,7 +6,7 @@
 **Text mining phases**[^1][^2]
 1. Study purpose
    - Identificate and label biological search terms
-2. Information retrival
+2. Information retrival (agregar el repositorio de donde obtuviste la base y los stack overflow)
    - Recolect, identify, pick and validate information
 3. Text processing
    - Exploring large amounts of data or text

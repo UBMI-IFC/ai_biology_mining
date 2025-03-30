@@ -10,7 +10,7 @@ keywords_text.append(text)
 text="".join(all_results_df["MeSH_Keywords"].str.lower())
 keywords_text.append(text)
 
-stopwords=(["foundanimal", "founddeep","synthetickeyword","processingkeyword","learningkeyword", "personnelkeyword","foundkeyword","intelligencekeyword","proliferationkeyword", "foundhumans", "available", "keywords", "found","no", "not", "keyword"]) + list(STOPWORDS)
+stopwords=([""]) + list(STOPWORDS)
 
 wordcloud = WordCloud(max_words=100, stopwords=stopwords, width=1600, height=800, background_color="black", max_font_size=90, collocations= True).generate(text)
 plt.figure(figsize=(12, 12))

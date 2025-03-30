@@ -1,7 +1,0 @@
-all_results_df['Term_List']=all_results_df['Term_List'].astype(str)
-all_results_df['Count']=all_results_df.groupby(["Year", "Bio_Term","Term_List"])["PMID"].transform("count")
-all_results_df=all_results_df.drop_duplicates(subset=["Year", "Term_List", "Bio_Term"])
-all_results_df['Year']=pd.to_numeric(all_results_df['Year'], errors='coerce')
-all_results_df = all_results_df[(all_results_df['Year'] >= 2020) & (all_results_df['Year'] <= 2025)]
-  
-print(all_results_df)

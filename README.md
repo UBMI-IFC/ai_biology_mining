@@ -48,19 +48,7 @@ Define the term list
 
 <ins>Used libraries:</ins>
 
-```
-from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
-import matplotlib.pyplot as plt
-import pandas as pd
-import numpy as np
-```
 
-"Charge" data, `index_col=0`
-
-```
-data = pd.read_csv("theterrible/database/isgoingtobe/here", index_col=0)
-print(data.head())
-```
 Wordcloud
 
 [^1]: Contreras, M. (2014). Minería de texto: una visión actual. *Biblioteca Universitaria*. 17(2), pp. 129-138.

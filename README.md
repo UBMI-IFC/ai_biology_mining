@@ -1,54 +1,53 @@
 # Crecimiento de la Inteligencia Artificial en las Ciencias Biológicas (2000-2025): Búsquedas semi-automatizadas en PubMed 🔬
 
-## **Introducción**
-...
+## **Introducción** (Puede mejorar)
+La información y el uso de nuevas herramientas han ido en aumento en las últimas décadas, por lo que ahora se busca la optimización en la cuál se recupera la literatura de las bases de datos como lo es PubMed, permitiendo descubrir patrones y tendencias en los datos, además de reducir el tiempo dedicado en el proceso de revisión documental  
 
 
 **¿Qué se puede realizar con este código?**
-- Es posible realizar la extracción semiautomatizada de los metadatos de artículos de PubMed mediante términos de búsqueda sobre la Inteligencia ARtificial aplicadas a las Ciencias Biológicas
+- Es posible realizar la extracción semiautomatizada de los metadatos de artículos de PubMed mediante términos de búsqueda sobre la Inteligencia Artificial aplicadas a las Ciencias Biológicas
 - Se realiza una gráfica de frecuencias de las palabras clave MeSH y los términos encontrados en títulos o resumen [Title/Abstract]
 - Se obtienen las tendencias de las publicaciones por disciplina biológica entre 2000 a 2025
 - Se elabora una gráfica donde se observan las menciones totales de la IA en las ciencias biológicas desde 2000 al 2025 (Checar redundancias)
 
-Outcome results
-   - Data display
-     - Subplot
-     - Barplot
-     - Wordcloud
+## **Resultados**
+   - Visualización de datos
+     - Gráfica de frecuencias
+     - Gráfica por disciplina biológica
+     - Total de menciones de IA
+     - Nubes de palabras
 
 # Título/Título/Título/Título/ 
-Para ingresar a la API de NCBI, es importante es importante agrerar tu email, se esta manera en caso de recibir algún error, NCBI se pondrá en contacto por este medio
+Para ingresar a la API de NCBI, asegúrate de tener internet y además es importante es importante agregar tu email de esta manera en caso de recibir alguna alerta, NCBI se pondrá en contacto por este medio
+
 ```
 Entrez.email = "youremail@example.com"
 ```
-También recuerda, que esté código se creó a partir de un ambiente de Google Colab (majorar esta parte).
+
+Dentro del código es posible encontrar listas para modificar las solicitudes de búsqueda. 
+Uno de ellas define el término de búsqueda y en este caso están divididos por:
+`Campo de la biología: Bioinformática, Biología, Biomedicina, Ecología, Genética
+Términos de la IA: Inteligencia Artificial, Machine Learning, Deep Learning`
+
+**Instalación de bibliotecas**
+
+'!**Pip** install Biopython pandas matplotlib seaborn wordcloud collections numpy 
+**El codigo se realizó en el ambiente de Google Colab**
+
+# Requerimientos
 
 
-Dentro del código es posible encontrar, distintos filtros para modificar las solicitudes de búsqueda. 
-Uno de ellos define el término de búsqueda
-`biofield: `
-
-# Information retrival
-
-# Text processing 
-
-# Data analysis and extraction
-
-# Outcome results
-
-## **Subplot**
-<ins>Used libraries:</ins>
-
-## **Barplot**
 
 
-## **Wordcloud**
+# Resultados (Recuerda agregar imágenes)
 
-<ins>Used libraries:</ins>
+## **Gráfica de frecuencias**
+
+## **Gráfica por disciplina biológica**
+
+## **Total de menciones de IA**
+
+## **Nube de palabras**
 
 
-Wordcloud
 
-[^1]: Contreras, M. (2014). Minería de texto: una visión actual. *Biblioteca Universitaria*. 17(2), pp. 129-138.
-
-[^2]: Sarkar, D. (2016). Text Analytics with Python: A practical real-world approach to gaining actionable insights from your data. https://doi.org/10.1007/978-1-4842-2388-8

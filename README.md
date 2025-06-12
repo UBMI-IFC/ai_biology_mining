@@ -1,39 +1,32 @@
 # Crecimiento de la Inteligencia Artificial en las Ciencias Biológicas (2000-2025): Búsquedas semi-automatizadas en PubMed 🔬
 
-## **Introduction**
+## **Introducción**
+...
+
 
 **¿Qué se puede realizar con este código?**
 - Es posible realizar la extracción semiautomatizada de los metadatos de artículos de PubMed mediante términos de búsqueda sobre la Inteligencia ARtificial aplicadas a las Ciencias Biológicas
 - Se realiza una gráfica de frecuencias de las palabras clave MeSH y los términos encontrados en títulos o resumen [Title/Abstract]
-- Se obtienen las tendencias de las publicaciones que mencionan la disciplina biológica entre 2000 a 2025
-- Se elabora una gráfica de 
-**Text mining phases**[^1][^2]
-1. Study purpose
-   - Identificate and label biological search terms
-2. Information retrival (agregar el repositorio de donde obtuviste la base y los stack overflow)
-   - Recolect, identify, pick and validate information
-3. Text processing
-   - Exploring large amounts of data or text
-     - -Filters and cleaning duplicates
-4. Data analysis and extraction
-5. Outcome results
-   - Storage information
+- Se obtienen las tendencias de las publicaciones por disciplina biológica entre 2000 a 2025
+- Se elabora una gráfica donde se observan las menciones totales de la IA en las ciencias biológicas desde 2000 al 2025 (Checar redundancias)
+
+Outcome results
    - Data display
      - Subplot
      - Barplot
      - Wordcloud
 
-# Study purpose 
-...
-Use of Biopython `Bio.Entrez` to join NCBI database and get PubMed data 
-
-¡Remember to write your email!
+# Título/Título/Título/Título/ 
+Para ingresar a la API de NCBI, es importante es importante agrerar tu email, se esta manera en caso de recibir algún error, NCBI se pondrá en contacto por este medio
 ```
 Entrez.email = "youremail@example.com"
 ```
+También recuerda, que esté código se creó a partir de un ambiente de Google Colab (majorar esta parte).
 
-Define the term list
-`Agregar el script de lo de las carpetas`
+
+Dentro del código es posible encontrar, distintos filtros para modificar las solicitudes de búsqueda. 
+Uno de ellos define el término de búsqueda
+`biofield: `
 
 # Information retrival
 

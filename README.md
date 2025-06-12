@@ -1,7 +1,12 @@
-# Growth of Artificial Intelligence in the Biological Sciences (2000–2025): Semi-automated searches in PubMed 🔬
+# Crecimiento de la Inteligencia Artificial en las Ciencias Biológicas (2000-2025): Búsquedas semi-automatizadas en PubMed 🔬
 
 ## **Introduction**
- 
+
+**¿Qué se puede realizar con este código?**
+- Es posible realizar la extracción semiautomatizada de los metadatos de artículos de PubMed mediante términos de búsqueda sobre la Inteligencia ARtificial aplicadas a las Ciencias Biológicas
+- Se realiza una gráfica de frecuencias de las palabras clave MeSH y los términos encontrados en títulos o resumen [Title/Abstract]
+- Se obtienen las tendencias de las publicaciones que mencionan la disciplina biológica entre 2000 a 2025
+- Se elabora una gráfica de 
 **Text mining phases**[^1][^2]
 1. Study purpose
    - Identificate and label biological search terms

@@ -34,7 +34,6 @@ La información y el uso de nuevas herramientas han ido en aumento en las últim
 ## **Instalación** 
 
 *Bibliotecas*
-(bash)
 ```pip install Biopython pandas matplotlib seaborn wordcloud numpy``` 
 **El codigo se realizó en el ambiente de Google Colab**
 
@@ -45,25 +44,23 @@ Para ingresar a la API de NCBI de esta manera en caso de recibir alguna alerta, 
 Entrez.email = "youremail@example.com"
 ```
 
-*Repositorio*
-(clonar repositorio git y cd)
-
 
 *Requirements*
-(pip install -r requirements.txt)
 
 
-
-## Resultados (Recuerda agregar imágenes)
+## Resultados
 
 **Palabras clave más frecuentes**
+![common_keywords](https://github.com/user-attachments/assets/7579523f-c79f-43df-9175-a1814ec2b037)
+
 
 **Nube de palabras**
+![wordcloud_freq](https://github.com/user-attachments/assets/049f336a-6a3e-40aa-8f60-79e7eb4d83f4)
 
 **Gráfica por disciplina biológica**
+![barplot_count](https://github.com/user-attachments/assets/9cd08c01-c983-421f-9711-6c6c4844aafe)
 
 **Total de menciones de IA**
-
-## Licencia
+![total_pub](https://github.com/user-attachments/assets/ecdf4228-a2dd-4617-83bf-7df776ea19be)
 
 

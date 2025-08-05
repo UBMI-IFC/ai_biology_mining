@@ -1,25 +1,31 @@
 # Crecimiento de la Inteligencia Artificial en las Ciencias Biológicas (2000-2025): Búsquedas semi-automatizadas en PubMed 🔬
 
 ## **Introducción**
-El acceso a la información así como el desarrollo de nuevas herramientas han ido en aumento en las últimas décadas por lo que se ha transformado la manera en la que generamos y gestionamos el conocimiento científico presentando un desafío importante para los investigadores.
-En este proyecto se realiza un análisis semiautomatizado para estudiar la evolución y crecimiento de la aplicación de la Inteligencia Artificial en diferentes campos de las ciencias biológicas, mediante el hace uso de la API de PubMed para extraer, procesar y visualizar datos de las publicaciones científicas. 
+El desarrollo de nuevas herramientas, como lo es la inteligencia artificial (IA), han ido adquiriendo gran popularidad en las útlimas décadas, terminando por ser aplicados en distintos ámbitos de la vida cotidiana, incluyendo las ciencias biológicas. Sin embargo, no todas las áreas dentro de este campo presentan el mismo nivel de integración de estas herramientas.
+Por ello, se realizó este proyecto donde se desarrolló una herramienta que permite realizar búsquedas bibliográficas semiautomatizadas para explorar la vinculación entre la IA y cinco áreas de las ciencias biológicas. Permitiendo visualizar parte de su evolución y crecimiento mediante la extracción, procesamiento y análisis bibliográfico de grandes volúmenes de información, utilizando la API de PubMed. 
 
 ## **¿Qué se puede realizar con este código?**
 Con la API de PubMed a través de Entrez E-Utilities, es posible:
 
-- Realizar la extracción semiautomatizada de los metadatos de artículos científicos en PubMed mediante los términos de búsqueda relacionados con la inteligencia artificial aplicada a las ciencias biológicas.
-- Analizar de palabras clave y su frecuencia de aparición en los textos, usando términos MeSH y en texto libre ([Title/Abstract]).
-- Visualizar los términos clave en nubes de palabras, revelando patrones en grandes volúmenes de datos.
-- Obtener las tendencias de las publicaciones por disciplina biológica entre 2000 a 2025.
-- Generar gráficas donde se observa la distribución temporal de las menciones totales de la IA dentro las ciencias biológicas.
+- Realizar la extracción semiautomatizada de los metadatos de artículos científicos en PubMed mediante los términos de búsqueda relacionados con la IA aplicada a las ciencias biológicas.
+- Analizar de palabras clave y su frecuencia de aparición en los textos, por medio de los términos MeSH y en el texto ([Title/Abstract]).
+- Visualizar los términos clave en nubes de palabras.
+- Identificar tendencias de las publicaciones por disciplina biológica en el periodo de 2000 a 2025.
+- Generar gráficas donde se muestra la distribución temporal de las menciones totales de la IA dentro las ciencias biológicas.
+- Procesar un gran volumen de información, disminuyendo la necesidad de una revisión manual extensiva.
     
 ## **Metodología**
 
-- Definición de términos de búsqueda: Combinación de términos de IA y campo de biología.
-- Búsqueda y extracción de metadatos: Por medio del uso de la API de Pubmed, se procesaron los registros.
-- Limpieza de datos: Eliminación de duplicados y homogeneización de los términos
-- Análisis de palabras clave: Conteo de términos 
-- Visualizacón: Generación de gráficos y nubes de palabras.
+- *Definición de términos de búsqueda*
+   - Combinación de términos de IA (Machine Learning, Deep Learning y Artificial Intelligence) y campos de la biología (biology, biomedicine, genetics, ecology, bioinformatics).
+- *Búsqueda y extracción de metadatos*
+   - Por medio del uso de la API de Pubmed, se procesaron los registros del período 2000-2025, donde además las búsquedas limitaron en [Title/Abstract] y muestran un máximo de 500 artículos por combinación de términos.
+- *Limpieza de datos*
+   - Eliminación de duplicados basado en PMIDs únicos y se homogeneizó la información.
+- *Análisis de palabras clave*
+   - Conteo de frecuencias de los términos encontrados en MeSH y en el texto.
+- *Visualización*
+   - Generación de gráficos de tendencias y nubes de palabras con los datos obtenidos.
 
 ## **Instalación** 
 
@@ -38,7 +44,6 @@ Entrez.email = "youremail@example.com"
 
  - Dentro del código es posible encontrar listas para modificar las solicitudes de búsqueda y están divididos como:
    ```Campo de la biología: Bioinformática, Biología, Biomedicina, Ecología, Genética. Términos de la IA: Inteligencia Artificial, Machine Learning, Deep Learning.```
-   - Las búsquedas se limitan a 500 artículos por combinación de términos, en un periodo de 2000-2025
    - Visualización de datos
 
 **Palabras clave más frecuentes**

@@ -30,6 +30,7 @@ Con la API de PubMed a través de Entrez E-Utilities, es posible:
 ## **Instalación** 
 
 *Bibliotecas*
+
 **El codigo se realizó en un entorno de Google Colab y se instalaron las siguientes bibliotecas de Python**
 ```pip install Biopython pandas matplotlib seaborn wordcloud numpy``` 
 
@@ -42,8 +43,6 @@ Entrez.email = "youremail@example.com"
 
 ## Resultados
 
- - Dentro del código es posible encontrar listas para modificar las solicitudes de búsqueda y están divididos como:
-   ```Campo de la biología: Bioinformática, Biología, Biomedicina, Ecología, Genética. Términos de la IA: Inteligencia Artificial, Machine Learning, Deep Learning.```
    - Visualización de datos
 
 **Palabras clave más frecuentes**
@@ -59,4 +58,4 @@ Entrez.email = "youremail@example.com"
 **Total de menciones de IA**
 ![total_pub](https://github.com/user-attachments/assets/ecdf4228-a2dd-4617-83bf-7df776ea19be)
 
-**Este proyecto fue desarrollado como parte del programa de servicio social en la Unidad de Bioinformática y Manejo de la Información del Instituto de Fisiología Celular, UNAM.**
+*Este proyecto fue desarrollado como parte del programa de servicio social en la Unidad de Bioinformática y Manejo de la Información del Instituto de Fisiología Celular, UNAM.*

@@ -32,9 +32,11 @@ Con la API de PubMed a través de Entrez E-Utilities, es posible:
 *Bibliotecas*
 
 **El codigo se realizó en un entorno de Google Colab y se instalaron las siguientes bibliotecas de Python**
+
 ```pip install Biopython pandas matplotlib seaborn wordcloud numpy``` 
 
 *Configura tu email*
+
 Para ingresar a la API se sugiere registrar un correo electrónico como contacto y así recibir alertas de uso en caso de ser necesario.
 
 ```
@@ -42,8 +44,6 @@ Entrez.email = "youremail@example.com"
 ```
 
 ## Resultados
-
-   - Visualización de datos
 
 **Palabras clave más frecuentes**
 ![common_keywords](https://github.com/user-attachments/assets/7579523f-c79f-43df-9175-a1814ec2b037)
@@ -57,5 +57,6 @@ Entrez.email = "youremail@example.com"
 
 **Total de menciones de IA**
 ![total_pub](https://github.com/user-attachments/assets/ecdf4228-a2dd-4617-83bf-7df776ea19be)
+
 
 *Este proyecto fue desarrollado como parte del programa de servicio social en la Unidad de Bioinformática y Manejo de la Información del Instituto de Fisiología Celular, UNAM.*

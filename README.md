@@ -17,7 +17,7 @@ Using the PubMed API through Entrez E-Utilities, it is possible to:
 ## **Methodology**
 
 - *Search term definition*
-   - Combine AI terms (Machine Learning, Deep Learning and Artificial Intelligence) with biological fields (biology, biomedicine, genetics, ecology and bioinformatics).
+   - Combine AI terms ```Machine Learning, Deep Learning and Artificial Intelligence``` with biological fields ```biology, biomedicine, genetics, ecology and bioinformatics```.
 - *Search and metadata extraction*
    - Using the PubMed API, records from 2000-2025 were processed with searches limited to [Title/Abstract] and showing a maximum of 500 articles per term combination.
 - *Data cleaning*

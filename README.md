@@ -35,6 +35,8 @@ Using the PubMed API through Entrez E-Utilities, it is possible to:
 
 ```pip install Biopython pandas matplotlib seaborn wordcloud numpy``` 
 
+You can also access the notebook in [Google Colab bio mining](https://colab.research.google.com/drive/1Jf52G462JOr1qgynk2Ae74ImTkltIbHo?usp=sharing)
+
 *Configure your email*
 
 To access the PubMed API, it's recommended to register an email address as contact information to receive usage alerts if necessary.
